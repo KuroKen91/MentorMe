@@ -3,17 +3,18 @@
     <b-card
       :title="this.mentorData.name"
       :img-src="this.mentorData.photoURL"
-      :img-alt="this.mentorData.name"
+      :img-alt="'Photo of' + ' ' +this.mentorData.name"
       img-top
       tag="article"
       style="max-width: 15rem"
       class="mb-2"
     >
       <b-card-text>
-        {{this.mentorData.bio}}
+        {{ this.mentorData.tag }}
       </b-card-text>
-
-      <b-button href="#" variant="primary">Book Me</b-button>
+      <b-button href="#" variant="primary" @click="sendMentorEmit"
+        >See More</b-button
+      >
     </b-card>
   </div>
 </template>
@@ -22,12 +23,17 @@
 export default {
   name: "Mentor",
   props: {
-      mentorData: {
-          name: String,
-          photoURL: String,
-          bio: String,
-      }
-  }
+    mentorData: {
+      name: String,
+      photoURL: String,
+      tag: String,
+    },
+  },
+  methods: {
+    sendMentorEmit() {
+      this.$emit("mentor-full-please", this.mentorData.name);
+    },
+  },
 };
 </script>
 

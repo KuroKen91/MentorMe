@@ -3,7 +3,7 @@
     <Navbar />
     <div class="main">
       <div v-if="mainPageClicked"><MainPage /></div>
-      <div v-else><Splash @toggle-page-please="togglePage" /></div>
+      <div v-else><Splash @toggle-to-MainPage-please="toggleToMainPage" /></div>
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
     };
   },
   methods: {
-    togglePage() {
+    toggleToMainPage() {
       this.mainPageClicked = true;
     },
   },

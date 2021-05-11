@@ -18,7 +18,7 @@ export default {
 
   methods: {
     emitTogglePage() {
-      this.$emit("toggle-page-please");
+      this.$emit("toggle-to-MainPage-please");
     },
   },
 };
