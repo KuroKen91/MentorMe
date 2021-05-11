@@ -1,0 +1,20 @@
+require("dotenv").config({ path: "./.env" });
+const app = require("./app");
+const db = require("./knex");
+
+(async () => {
+  try {
+    console.log("Running migrations");
+    await db.migrate.latest();
+    await db.seed.run();
+    console.log("Starting express");
+    app.listen({ port: process.env.PORT || 5000 }, () =>
+      console.log(
+        `Express server listening on port ${process.env.PORT || 5000}`
+      )
+    );
+  } catch (err) {
+    console.error("Error starting app!", err);
+    process.exit(-1);
+  }
+})();
