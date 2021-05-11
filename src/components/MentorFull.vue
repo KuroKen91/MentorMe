@@ -11,16 +11,31 @@
         <h2>{{ this.mentorData.name }}</h2>
         <h4>timezone</h4>
       </div>
+      <div>
+        <StripeCheckout
+      ref="checkoutRef"
+      mode="payment"
+      :pk="publishableKey"
+      :line-items="lineItems"
+      :success-url="successURL"
+      :cancel-url="cancelURL"
+      @loading="v => loading = v"
+    />
+      </div>
       <div class="bio">
         <p>{{ this.mentorData.tag }}</p>
       </div>
-      <button>Book Me!</button>
+      <button @click="submit">Book Me!</button>
     </div>
   </div>
 </template>
 
 <script>
+import { StripeCheckout } from '@vue-stripe/vue-stripe';
 export default {
+  components: {
+    StripeCheckout,
+  },
   name: "MentorFull",
   props: {
     mentorData: {
@@ -29,10 +44,29 @@ export default {
       tag: String,
     },
   },
+   data () {
+    this.publishableKey = "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL";
+    return {      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
+      loading: false,
+      lineItems: [
+        {
+          price: "price_1Ipr2QJE2aA1nBuaYDN4WXlT", // The id of item
+          quantity: 1,
+        },
+      ],
+      successURL: 'https://www.google.com', //Needs to land on success page
+      cancelURL: 'https://www.yahoo.com',   //Needs to land back on mentor full with a message that states payment cancelled.. or something.. idk
+    };
+  },
   methods: {
     emitReturnToMainPage() {
       this.$emit("return-to-MainPage-please")
-    }
+    },
+    submit() {
+      // redirects to STRIPE checkout
+      console.log("BUTTON PUSHED");
+      this.$refs.checkoutRef.redirectToCheckout();
+    },
   }
 };
 </script>
