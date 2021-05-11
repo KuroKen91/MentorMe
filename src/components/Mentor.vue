@@ -1,14 +1,41 @@
 <template>
-    <div></div>
+  <div>
+    <b-card
+      :title="this.mentorData.name"
+      :img-src="this.mentorData.photoURL"
+      :img-alt="'Photo of' + ' ' +this.mentorData.name"
+      img-top
+      tag="article"
+      style="max-width: 15rem"
+      class="mb-2"
+    >
+      <b-card-text>
+        {{ this.mentorData.tag }}
+      </b-card-text>
+      <b-button href="#" variant="primary" @click="sendMentorEmit"
+        >See More</b-button
+      >
+    </b-card>
+  </div>
 </template>
 
 <script>
-
 export default {
-    name: "Mentor",
-}
+  name: "Mentor",
+  props: {
+    mentorData: {
+      name: String,
+      photoURL: String,
+      tag: String,
+    },
+  },
+  methods: {
+    sendMentorEmit() {
+      this.$emit("mentor-full-please", this.mentorData.name);
+    },
+  },
+};
 </script>
 
 <style scoped>
-
 </style>
