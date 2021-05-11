@@ -31,7 +31,6 @@ export default {
 
 .logo {
     flex: 1;
-    border: 1px solid red; 
 }
 
 .navbar {
