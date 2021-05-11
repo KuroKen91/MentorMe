@@ -1,31 +1,47 @@
 <template>
-  <div class="splash">
+  <div>
+    <div class="splash">
+      <div class="welcome-message-container">
+        <p class="welcome-message-text">
+          Buy me right now. I'm cheap. Don't miss out!
+        </p>
+        <button @click="emitTogglePage">Click Me!</button>
+      </div>
+      <div class="empty-div"></div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+  name: "Splash",
+
+  methods: {
+    emitTogglePage() {
+      this.$emit("toggle-to-MainPage-please");
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+<style>
+.splash {
+  background-image: url("https://picsum.photos/1920/1080");
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.welcome-message-container {
+  /* border: 3px solid hotpink; */
+  flex: 2
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+.empty-div {
+  /* border: 1px solid red; */
+  flex: 1
 }
 </style>
