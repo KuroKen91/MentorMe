@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card
-      title="Card Title"
+      :title="this.mentorData.name"
       :img-src="this.mentorData.photoURL"
       img-alt="Image"
       img-top
@@ -10,8 +10,7 @@
       class="mb-2"
     >
       <b-card-text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+        {{this.mentorData.bio}}
       </b-card-text>
 
       <b-button href="#" variant="primary">Go somewhere</b-button>
@@ -25,7 +24,8 @@ export default {
   props: {
       mentorData: {
           name: String,
-          photoURL: String
+          photoURL: String,
+          bio: String,
       }
   }
 };
