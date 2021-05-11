@@ -32,7 +32,7 @@ export default {
 
 <style>
 .main-page {
-  background-color: hotpink;
+  background-color: #b4d455;
   height: 100vh;
   width: 100vw;
   display: flex;
