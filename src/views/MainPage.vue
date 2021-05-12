@@ -36,7 +36,7 @@ export default {
     };
   },
   created: async function() {
-    const {data: fetchedMentors } = await axios.get("/api/mentors");
+    const {data: fetchedMentors } = await axios.get("http://localhost:5000/api/mentors");
     this.mentors = fetchedMentors;
     //for mentor of fetchedMentors
     //build mentor object

@@ -9,7 +9,6 @@
       style="max-width: 15rem"
       class="mb-2"
     >
-    <div>
       {{ this.mentorData.skillset }}
       <b-card-text>
         {{ this.mentorData.tag }}

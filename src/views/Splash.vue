@@ -6,7 +6,7 @@
           Buy me right now. I'm cheap. Don't miss out!
         </p>
         <router-link to="/mainpage">
-          <button :href="href">Click Me!</button>
+          <button>Click Me!</button>
         </router-link>
         <!-- <router-view /> -->
       </div>

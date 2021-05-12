@@ -45,20 +45,21 @@ export default {
       tag: String,
       bio: String,
       skillset: Array,
+      priceID: String,
     },
   },
    data () {
-    return {      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
+    return {      
       publishableKey: "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
       loading: false,
       priceKey: "",
       lineItems: [
         {
-          price: "price_1Ipr2QJE2aA1nBuaYDN4WXlT", // The id of item
+          price: this.mentorData.priceID, // The id of item
           quantity: 1,
         },
       ],
-      successURL: "https://mentorme-staging.herokuapp.com/mainpage", //Needs to land on success page
+      successURL: "https://mentorme-staging.herokuapp.com/mainpage", //Needs to land on success page. Needs a success statement 
       cancelURL: "https://mentorme-staging.herokuapp.com/", //Needs to land back on mentor full with a message that states payment cancelled.. or something.. idk
     };
   },
