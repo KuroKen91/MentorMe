@@ -3,14 +3,19 @@
     <b-card
       :title="this.mentorData.name"
       :img-src="this.mentorData.photo"
-      :img-alt="'Photo of' + ' ' +this.mentorData.name"
+      :img-alt="'Photo of' + ' ' + this.mentorData.name"
       img-top
       tag="article"
       style="max-width: 15rem"
       class="mb-2"
     >
-    <div>
-      {{ this.mentorData.skillset }}
+      <div class="skillset">
+        <SkillsetIcon
+          v-for="skill of mentorData.skillset"
+          v-bind:key="skill"
+          v-bind:skill="skill"
+        />
+      </div>
       <b-card-text>
         {{ this.mentorData.tag }}
       </b-card-text>
@@ -22,8 +27,12 @@
 </template>
 
 <script>
+import SkillsetIcon from "./SkillsetIcon";
 export default {
   name: "Mentor",
+  components: {
+    SkillsetIcon,
+  },
   props: {
     mentorData: {
       name: String,
@@ -43,4 +52,8 @@ export default {
 </script>
 
 <style scoped>
+.skillset {
+  display: flex;
+  justify-content: center;
+}
 </style>

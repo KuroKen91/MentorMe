@@ -36,14 +36,15 @@ export default {
     };
   },
   created: async function() {
-    const {data: fetchedMentors } = await axios.get("/api/mentors");
+    const { data: fetchedMentors } = await axios.get(
+      "http://localhost:5000/api/mentors"
+    );
     this.mentors = fetchedMentors;
     //for mentor of fetchedMentors
     //build mentor object
-    //push the mentor object to this.mentors 
+    //push the mentor object to this.mentors
     console.log("THIS.MENTORS", this.mentors);
     console.log(fetchedMentors);
-    
   },
   methods: {
     toggleToMentorFull(name) {
