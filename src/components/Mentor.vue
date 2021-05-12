@@ -1,25 +1,25 @@
 <template>
   <div>
-    //take a look at this
     <b-card
       :title="this.mentorData.name"
       :img-src="this.mentorData.photo"
-      :img-alt="'Photo of' + ' ' +this.mentorData.name"
+      :img-alt="'Photo of' + ' ' + this.mentorData.name"
       img-top
       tag="article"
       style="max-width: 15rem"
       class="mb-2"
     >
-    <div>
-      {{ this.mentorData.skillset }}
-      <b-card-text>
-        {{ this.mentorData.tag }}
-      </b-card-text>
-      <router-link to="/mentorfull">
-        <b-button variant="primary" @click="setSelectedMentor"
-          >See More</b-button
-        >
-      </router-link>
+      <div>
+        {{ this.mentorData.skillset }}
+        <b-card-text>
+          {{ this.mentorData.tag }}
+        </b-card-text>
+        <router-link to="/mentorfull">
+          <b-button variant="primary" @click="setSelectedMentor"
+            >See More</b-button
+          >
+        </router-link>
+      </div>
     </b-card>
   </div>
 </template>

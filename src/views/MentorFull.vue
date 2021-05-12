@@ -1,8 +1,11 @@
 <template>
   <div class="mentor-full">
-    <button @click="emitReturnToMainPage">Return to Mentors</button>
     <div class="mentor-card">
-      <img :src="mentor.photoURL" :alt="'Photo of' + ' ' + mentor.name" />
+      <img
+        class="mentor-photo"
+        :src="mentor.photo"
+        :alt="'Photo of' + ' ' + mentor.name"
+      />
       <div class="namecard">
         <h2>{{ mentor.name }}</h2>
         <h4>timezone</h4>
@@ -19,7 +22,7 @@
         />
       </div>
       <div class="bio">
-        <p>{{ mentor.tag }}</p>
+        <p>{{ mentor.bio }}</p>
       </div>
       <button @click="submit">Book Me!</button>
     </div>
@@ -39,19 +42,13 @@ export default {
     mentor() {
       return this.$store.state.selectedMentor;
     },
-    //this is incoming change, take a look
-  props: {
-    mentorData: {
-      name: String,
-      photo: String,
-      tag: String,
-      bio: String,
-      skillset: Array,
-    },
   },
-   data () {
-    return {      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
-      publishableKey: "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
+
+  data() {
+    return {
+      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
+      publishableKey:
+        "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
       loading: false,
       priceKey: "",
       lineItems: [
@@ -65,9 +62,6 @@ export default {
     };
   },
   methods: {
-    emitReturnToMainPage() {
-      this.$emit("return-to-MainPage-please");
-    },
     submit() {
       // redirects to STRIPE checkout
       console.log("BUTTON PUSHED");
