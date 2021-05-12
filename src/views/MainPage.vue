@@ -1,7 +1,11 @@
 <template>
   <div class="main-page">
     <div class="all-mentors">
-      <div class="mentor" v-for="item in mentors" :key="item.name">
+      <div
+        class="mentor"
+        v-for="item in this.$store.state.mentors"
+        :key="item.name"
+      >
         <Mentor :mentorData="item" />
       </div>
     </div>

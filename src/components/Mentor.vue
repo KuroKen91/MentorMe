@@ -9,8 +9,14 @@
       style="max-width: 15rem"
       class="mb-2"
     >
+      <div class="skillset">
+        <SkillsetIcon
+          v-for="skill of mentorData.skillset"
+          v-bind:key="skill"
+          v-bind:skill="skill"
+        />
+      </div>
       <div>
-        {{ this.mentorData.skillset }}
         <b-card-text>
           {{ this.mentorData.tag }}
         </b-card-text>
@@ -25,8 +31,12 @@
 </template>
 
 <script>
+import SkillsetIcon from "./SkillsetIcon";
 export default {
   name: "Mentor",
+  components: {
+    SkillsetIcon,
+  },
   props: {
     mentorData: {
       name: String,
@@ -46,4 +56,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.skillset {
+  display: flex;
+  justify-content: center;
+}
+</style>
