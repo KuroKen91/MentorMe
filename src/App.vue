@@ -4,6 +4,7 @@
     <div class="main">
       <router-link to="/"> </router-link>
       <router-link to="/mainpage"></router-link>
+      <router-link to="/mentorfull"></router-link>
       <router-view />
     </div>
   </div>
