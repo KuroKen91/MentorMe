@@ -2,15 +2,16 @@
   <div id="app">
     <Navbar />
     <div class="main">
-      <div v-if="mainPageClicked"><MainPage /></div>
-      <div v-else><Splash @toggle-to-MainPage-please="toggleToMainPage" /></div>
+      <!-- <div><MainPage /></div> -->
+      <div><Splash @toggle-to-MainPage-please="toggleToMainPage" /></div>
+      <!-- <router-link></router-link> -->
     </div>
   </div>
 </template>
 
 <script>
 import Splash from "./components/Splash.vue";
-import MainPage from "./components/MainPage.vue";
+// import MainPage from "./components/MainPage.vue";
 import Navbar from "./components/Navbar.vue";
 
 import Vue from "vue";
@@ -29,10 +30,10 @@ export default {
   name: "App",
   components: {
     Splash,
-    MainPage,
+    // MainPage,
     Navbar,
   },
-  data: function () {
+  data: function() {
     return {
       mainPageClicked: false,
     };
