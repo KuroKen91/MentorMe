@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-
 import Vue from "vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
@@ -25,6 +23,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
+import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "App",
