@@ -2,18 +2,18 @@
   <div id="app">
     <Navbar />
     <div class="main">
-      <router-link to="/"> </router-link>
+      
+      <!-- <router-link to="/"> </router-link>
       <router-link to="/mainpage"></router-link>
       <router-link to="/mentorfull"></router-link>
-      <router-link to="/success"></router-link>
+      <router-link to="/success"></router-link> -->
       <router-view />
+      <router-link to="/success"><button>Pete's Button</button></router-link>
     </div>
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-
 import Vue from "vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
@@ -25,6 +25,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
+import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "App",

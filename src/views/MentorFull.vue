@@ -8,7 +8,7 @@
       />
       <div class="namecard">
         <h2>{{ mentor.name }}</h2>
-        <h4>timezone</h4>
+        <h5>timezone: {{mentor.timezone}}</h5>
       </div>
       <div>
         <StripeCheckout
@@ -56,10 +56,9 @@ export default {
       publishableKey:
         "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
       loading: false,
-      priceKey: "",
       lineItems: [
         {
-          price: "price_1Ipr2QJE2aA1nBuaYDN4WXlT", // The id of item
+          price: this.$store.state.selectedMentor.priceID, // HOW DO WE BRING OVER THE MENTOR PRICE ID 
           quantity: 1,
         },
       ],

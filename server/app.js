@@ -6,7 +6,6 @@ const history = require("connect-history-api-fallback");
 const path = require("path");
 const db = require("./knex");
 const app = express();
-
 app.use(cors());
 
 app.get("/api/mentors", async (req, res) => {
@@ -24,7 +23,6 @@ app.get("/api/mentors", async (req, res) => {
 app.use(history());
 
 app.use(morgan("tiny"));
-
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "..", "dist")));
 

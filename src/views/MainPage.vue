@@ -35,7 +35,7 @@ export default {
 
 <style>
 .main-page {
-  background-color: #b4d455;
+  background-color: blue;
   height: 100vh;
   width: 100vw;
 }
@@ -54,7 +54,6 @@ export default {
 }
 
 .empty-div {
-  /* border: 1px solid red; */
   flex: 1;
 }
 </style>
