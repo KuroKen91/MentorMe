@@ -2,6 +2,7 @@ module.exports = [
   {
     id: "3dcecbfa-9648-400e-bbf6-9c4c4282925d",
     name: "Bill Gates",
+    timezone: "Pacific Time (USA)",
     photo:
       "https://content.fortune.com/wp-content/uploads/2020/09/CNV.10.20.FORTUNE_BILL_AND_MELINDA_GATES_030.jpg",
     tag: "Bill Gates is a technologist, business leader, and philanthropist.",
@@ -12,6 +13,7 @@ module.exports = [
   {
     id: "f7d22866-7d75-43ba-a5ff-05fdb2a293e1",
     name: "Elon Musk",
+    timezone: "Martian Time",
     photo:
       "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5OTk2ODUyMTMxNzM0ODcy/gettyimages-1229892983-square.jpg",
     tag:
@@ -23,6 +25,7 @@ module.exports = [
   {
     id: "2744f17d-49cd-4c26-ac8c-bedf0ab7c9d2",
     name: "Ken Kurosaki",
+    timezone: "Tokyo/Seoul",
     photo: "https://i.imgur.com/QAeBCDi.jpg",
     tag: "They don't think it be like it is, but it do.",
     bio:
