@@ -1,14 +1,10 @@
 <template>
   <div id="app">
-    <Navbar />
+    <div class="navbar">
+      <Navbar />
+    </div>
     <div class="main">
-      
-      <!-- <router-link to="/"> </router-link>
-      <router-link to="/mainpage"></router-link>
-      <router-link to="/mentorfull"></router-link>
-      <router-link to="/success"></router-link> -->
       <router-view />
-      <router-link to="/success"><button>Pete's Button</button></router-link>
     </div>
   </div>
 </template>
@@ -36,17 +32,19 @@ export default {
 </script>
 
 <style>
+.navbar {
+  padding: 0px;
+}
+
 .main {
   position: absolute;
   top: 0;
   height: 100%;
 }
 
-.nav {
-  width: 100;
-}
-
 #app {
+  display: flex;
+  justify-content: flex-end;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

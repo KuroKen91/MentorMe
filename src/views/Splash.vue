@@ -3,11 +3,18 @@
     <div class="splash">
       <div class="main-wrapper">
         <div class="welcome-message-container">
+          <h1>MentorMe</h1>
           <p class="welcome-message-text">
-            One on one, online mentoring from industry professionals with skills YOU need to learn
+            One on one, online mentoring from industry professionals with skills
+            YOU need to learn.
           </p>
-          <router-link to="/mainpage">
-            <button>See our mentors</button>
+          <p>
+            Ask questions. Be curious. Grow your confidence.
+          </p>
+          <router-link to="/mentors">
+            <button id="see-mentors" class="btn btn-light">
+              Our Mentors
+            </button>
           </router-link>
         </div>
       </div>
@@ -29,7 +36,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .splash {
-  background-image: url("https://picsum.photos/id/5/1920/1080");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url("https://picsum.photos/id/5/1920/1080");
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -38,8 +46,15 @@ export default {
 }
 
 .welcome-message-container {
-  border: 3px solid whitesmoke;
   color: white;
   padding: 12px;
+}
+
+p {
+  margin: 2px;
+}
+
+#see-mentors {
+  margin-top: 1rem;
 }
 </style>

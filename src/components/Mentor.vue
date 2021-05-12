@@ -20,12 +20,11 @@
         <b-card-text>
           {{ this.mentorData.tag }}
         </b-card-text>
-        <router-link to="/mentorfull">
-          <b-button variant="primary" @click="setSelectedMentor"
-            >See More</b-button
-          >
-        </router-link>
       </div>
+
+      <router-link to="/mentorfull">
+        <b-button variant="dark" @click="setSelectedMentor">See More</b-button>
+      </router-link>
     </b-card>
   </div>
 </template>
@@ -57,6 +56,23 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  height: 28rem;
+  position: relative;
+}
+
+button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -1%);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
 .skillset {
   display: flex;
   justify-content: center;
