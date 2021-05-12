@@ -2,11 +2,7 @@
   <div class="mentor-full">
     <button @click="emitReturnToMainPage">Return to Mentors</button>
     <div class="mentor-card">
-      <img
-        :src="mentor.photoURL"
-        :alt="'Photo of' + ' ' + mentor.name"
-        class="mentor-photo"
-      />
+      <img :src="mentor.photoURL" :alt="'Photo of' + ' ' + mentor.name" />
       <div class="namecard">
         <h2>{{ mentor.name }}</h2>
         <h4>timezone</h4>
@@ -32,6 +28,7 @@
 
 <script>
 import { StripeCheckout } from "@vue-stripe/vue-stripe";
+
 export default {
   components: {
     StripeCheckout,
@@ -42,13 +39,21 @@ export default {
     mentor() {
       return this.$store.state.selectedMentor;
     },
+    //this is incoming change, take a look
+  props: {
+    mentorData: {
+      name: String,
+      photo: String,
+      tag: String,
+      bio: String,
+      skillset: Array,
+    },
   },
-  data() {
-    this.publishableKey =
-      "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL";
-    return {
-      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
+   data () {
+    return {      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
+      publishableKey: "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
       loading: false,
+      priceKey: "",
       lineItems: [
         {
           price: "price_1Ipr2QJE2aA1nBuaYDN4WXlT", // The id of item

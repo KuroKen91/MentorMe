@@ -18,8 +18,9 @@
 </template>
 
 <script>
-import Mentor from "../components/Mentor";
-import MentorFull from "../views/MentorFull.vue";
+import Mentor from "../components/Mentor.vue";
+import MentorFull from "./MentorFull.vue";
+import axios from "axios";
 
 export default {
   name: "MainPage",
@@ -37,6 +38,15 @@ export default {
       isAllMentors: true,
       // currentMentor:
     };
+  },
+  created: async function() {
+    const { data: fetchedMentors } = await axios.get("/api/mentors");
+    this.mentors = fetchedMentors;
+    //for mentor of fetchedMentors
+    //build mentor object
+    //push the mentor object to this.mentors
+    console.log("THIS.MENTORS", this.mentors);
+    console.log(fetchedMentors);
   },
   methods: {
     toggleToMentorFull(name) {

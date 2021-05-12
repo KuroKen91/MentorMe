@@ -1,14 +1,17 @@
 <template>
   <div>
+    //take a look at this
     <b-card
       :title="this.mentorData.name"
-      :img-src="this.mentorData.photoURL"
-      :img-alt="'Photo of' + ' ' + this.mentorData.name"
+      :img-src="this.mentorData.photo"
+      :img-alt="'Photo of' + ' ' +this.mentorData.name"
       img-top
       tag="article"
       style="max-width: 15rem"
       class="mb-2"
     >
+    <div>
+      {{ this.mentorData.skillset }}
       <b-card-text>
         {{ this.mentorData.tag }}
       </b-card-text>
@@ -27,8 +30,10 @@ export default {
   props: {
     mentorData: {
       name: String,
-      photoURL: String,
+      photo: String,
       tag: String,
+      bio: String,
+      skillset: Array,
     },
   },
   methods: {
