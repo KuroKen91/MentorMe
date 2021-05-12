@@ -4,14 +4,14 @@
     <div class="main">
       <router-link to="/"> </router-link>
       <router-link to="/mainpage"></router-link>
+      <router-link to="/mentorfull"></router-link>
+      <router-link to="/success"></router-link>
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-
 import Vue from "vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
@@ -23,21 +23,13 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
+import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "App",
   components: {
-    // Splash,
     Navbar,
-    // MainPage,
   },
-  data: function() {
-    return {
-      //for github
-      // mainPageClicked: false,
-    };
-  },
-  methods: {},
 };
 </script>
 
