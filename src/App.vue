@@ -5,6 +5,7 @@
       <router-link to="/"> </router-link>
       <router-link to="/mainpage"></router-link>
       <router-link to="/mentorfull"></router-link>
+      <router-link to="/success"></router-link>
       <router-view />
     </div>
   </div>
@@ -28,17 +29,8 @@ Vue.use(IconsPlugin);
 export default {
   name: "App",
   components: {
-    // Splash,
     Navbar,
-    // MainPage,
   },
-  data: function() {
-    return {
-      //for github
-      // mainPageClicked: false,
-    };
-  },
-  methods: {},
 };
 </script>
 

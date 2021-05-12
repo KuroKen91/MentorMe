@@ -57,7 +57,8 @@ export default {
           quantity: 1,
         },
       ],
-      successURL: "https://mentorme-staging.herokuapp.com/mainpage", //Needs to land on success page
+      // Change back when pushing
+      successURL: "http;//localhost:8080/successmodal", //Needs to land on success page
       cancelURL: "https://mentorme-staging.herokuapp.com/", //Needs to land back on mentor full with a message that states payment cancelled.. or something.. idk
     };
   },
