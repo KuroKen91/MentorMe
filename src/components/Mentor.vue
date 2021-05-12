@@ -34,6 +34,7 @@ export default {
       tag: String,
       bio: String,
       skillset: Array,
+      priceID: String,
     },
   },
   methods: {
