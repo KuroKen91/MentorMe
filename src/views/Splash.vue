@@ -4,10 +4,10 @@
       <div class="main-wrapper">
         <div class="welcome-message-container">
           <p class="welcome-message-text">
-            Buy me right now. I'm cheap. Don't miss out!
+            One on one, online mentoring from industry professionals with skills YOU need to learn
           </p>
           <router-link to="/mainpage">
-            <button>Make me a coding God</button>
+            <button>See our mentors</button>
           </router-link>
         </div>
       </div>

@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import MainPage from "../views/MainPage";
 import Splash from "../views/Splash";
 import MentorFull from "../views/MentorFull";
-import Successmodal from "../components/Successmodal";
+import Success from "../views/Success";
 
 Vue.use(VueRouter);
 
@@ -26,7 +26,7 @@ const routes = [
   {
     path: "/success",
     name: "Success",
-    component: Successmodal,
+    component: Success,
   },
 ];
 
