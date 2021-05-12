@@ -3,7 +3,7 @@
     <button @click="emitReturnToMainPage">Return to Mentors</button>
     <div class="mentor-card">
       <img
-        :src="this.mentorData.photoURL"
+        :src="this.mentorData.photo"
         :alt="'Photo of' + ' ' + this.mentorData.name"
         class="mentor-photo"
       />
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { StripeCheckout } from '@vue-stripe/vue-stripe';
+import { StripeCheckout } from "@vue-stripe/vue-stripe";
 
 export default {
   components: {
@@ -41,8 +41,10 @@ export default {
   props: {
     mentorData: {
       name: String,
-      photoURL: String,
+      photo: String,
       tag: String,
+      bio: String,
+      skillset: Array,
     },
   },
    data () {
