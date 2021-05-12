@@ -3,12 +3,12 @@
     <button @click="emitReturnToMainPage">Return to Mentors</button>
     <div class="mentor-card">
       <img
-        :src="this.mentorData.photoURL"
-        :alt="'Photo of' + ' ' + this.mentorData.name"
+        :src="mentor.photoURL"
+        :alt="'Photo of' + ' ' + mentor.name"
         class="mentor-photo"
       />
       <div class="namecard">
-        <h2>{{ this.mentorData.name }}</h2>
+        <h2>{{ mentor.name }}</h2>
         <h4>timezone</h4>
       </div>
       <div>
@@ -23,7 +23,7 @@
         />
       </div>
       <div class="bio">
-        <p>{{ this.mentorData.tag }}</p>
+        <p>{{ mentor.tag }}</p>
       </div>
       <button @click="submit">Book Me!</button>
     </div>
@@ -37,11 +37,10 @@ export default {
     StripeCheckout,
   },
   name: "MentorFull",
-  props: {
-    mentorData: {
-      name: String,
-      photoURL: String,
-      tag: String,
+
+  computed: {
+    mentor() {
+      return this.$store.state.selectedMentor;
     },
   },
   data() {

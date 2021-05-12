@@ -13,7 +13,7 @@
         {{ this.mentorData.tag }}
       </b-card-text>
       <router-link to="/mentorfull">
-        <b-button href="#" variant="primary" @click="sendMentorEmit"
+        <b-button variant="primary" @click="setSelectedMentor"
           >See More</b-button
         >
       </router-link>
@@ -32,8 +32,8 @@ export default {
     },
   },
   methods: {
-    sendMentorEmit() {
-      this.$emit("mentor-full-please", this.mentorData.name);
+    setSelectedMentor() {
+      this.$store.commit("setSelectedMentor", this.mentorData);
     },
   },
 };
