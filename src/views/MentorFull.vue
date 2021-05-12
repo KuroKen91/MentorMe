@@ -13,14 +13,14 @@
       </div>
       <div>
         <StripeCheckout
-      ref="checkoutRef"
-      mode="payment"
-      :pk="publishableKey"
-      :line-items="lineItems"
-      :success-url="successURL"
-      :cancel-url="cancelURL"
-      @loading="v => loading = v"
-    />
+          ref="checkoutRef"
+          mode="payment"
+          :pk="publishableKey"
+          :line-items="lineItems"
+          :success-url="successURL"
+          :cancel-url="cancelURL"
+          @loading="(v) => (loading = v)"
+        />
       </div>
       <div class="bio">
         <p>{{ this.mentorData.tag }}</p>
@@ -56,20 +56,20 @@ export default {
           quantity: 1,
         },
       ],
-      successURL: 'https://www.google.com', //Needs to land on success page
-      cancelURL: 'https://www.yahoo.com',   //Needs to land back on mentor full with a message that states payment cancelled.. or something.. idk
+      successURL: "https://www.google.com", //Needs to land on success page
+      cancelURL: "https://www.yahoo.com", //Needs to land back on mentor full with a message that states payment cancelled.. or something.. idk
     };
   },
   methods: {
     emitReturnToMainPage() {
-      this.$emit("return-to-MainPage-please")
+      this.$emit("return-to-MainPage-please");
     },
     submit() {
       // redirects to STRIPE checkout
       console.log("BUTTON PUSHED");
       this.$refs.checkoutRef.redirectToCheckout();
     },
-  }
+  },
 };
 </script>
 
@@ -83,7 +83,7 @@ export default {
 }
 
 .mentor-card {
-  border: 1px solid black
+  border: 1px solid black;
 }
 
 .mentor-photo {
