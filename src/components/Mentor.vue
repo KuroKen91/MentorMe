@@ -35,6 +35,7 @@ export default {
       bio: String,
       skillset: Array,
       priceID: String,
+      timezone: String,
     },
   },
   methods: {

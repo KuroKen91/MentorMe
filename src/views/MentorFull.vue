@@ -8,7 +8,7 @@
       />
       <div class="namecard">
         <h2>{{ mentor.name }}</h2>
-        <h4>timezone</h4>
+        <h5>timezone: {{mentor.timezone}}</h5>
       </div>
       <div>
         <StripeCheckout
