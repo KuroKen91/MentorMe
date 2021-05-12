@@ -5,7 +5,10 @@
         <p class="welcome-message-text">
           Buy me right now. I'm cheap. Don't miss out!
         </p>
-        <button @click="emitTogglePage">Click Me!</button>
+        <router-link to="/mainpage">
+          <button :href="href">Click Me!</button>
+        </router-link>
+        <!-- <router-view /> -->
       </div>
       <div class="empty-div"></div>
     </div>
@@ -16,11 +19,7 @@
 export default {
   name: "Splash",
 
-  methods: {
-    emitTogglePage() {
-      this.$emit("toggle-to-MainPage-please");
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -37,11 +36,11 @@ export default {
 
 .welcome-message-container {
   /* border: 3px solid hotpink; */
-  flex: 2
+  flex: 2;
 }
 
 .empty-div {
   /* border: 1px solid red; */
-  flex: 1
+  flex: 1;
 }
 </style>

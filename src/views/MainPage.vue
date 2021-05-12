@@ -7,7 +7,10 @@
     </div>
 
     <div v-else>
-      <MentorFull :mentorData="currentMentor" @return-to-MainPage-please="toggleToMainPage" />
+      <MentorFull
+        :mentorData="currentMentor"
+        @return-to-MainPage-please="toggleToMainPage"
+      />
     </div>
 
     <!-- <div class="empty-div"></div> -->
@@ -15,16 +18,16 @@
 </template>
 
 <script>
-import Mentor from "./Mentor.vue";
-import MentorFull from "./MentorFull.vue";
+import Mentor from "../components/Mentor";
+import MentorFull from "../views/MentorFull.vue";
 
 export default {
   name: "MainPage",
   components: {
     Mentor,
-    MentorFull
+    MentorFull,
   },
-  data: function () {
+  data: function() {
     return {
       isAllMentors: true,
       currentMentor: {},
@@ -51,20 +54,20 @@ export default {
     };
   },
   methods: {
-        toggleToMentorFull(name) {
-          this.isAllMentors = false;
-          for (let mentor of this.mentors) {
-            if (mentor.name === name) {
-              this.currentMentor = mentor
-            }
-          }
-        },
-        toggleToMainPage() {
-          console.log("heeeeeey")
-          this.isAllMentors = true;
-          this.currentMentor = {}
+    toggleToMentorFull(name) {
+      this.isAllMentors = false;
+      for (let mentor of this.mentors) {
+        if (mentor.name === name) {
+          this.currentMentor = mentor;
         }
-      },
+      }
+    },
+    toggleToMainPage() {
+      console.log("heeeeeey");
+      this.isAllMentors = true;
+      this.currentMentor = {};
+    },
+  },
 };
 </script>
 
@@ -73,7 +76,6 @@ export default {
   background-color: #b4d455;
   height: 100vh;
   width: 100vw;
-  
 }
 
 .all-mentors {

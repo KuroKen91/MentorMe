@@ -13,14 +13,14 @@
       </div>
       <div>
         <StripeCheckout
-      ref="checkoutRef"
-      mode="payment"
-      :pk="publishableKey"
-      :line-items="lineItems"
-      :success-url="successURL"
-      :cancel-url="cancelURL"
-      @loading="v => loading = v"
-    />
+          ref="checkoutRef"
+          mode="payment"
+          :pk="publishableKey"
+          :line-items="lineItems"
+          :success-url="successURL"
+          :cancel-url="cancelURL"
+          @loading="(v) => (loading = v)"
+        />
       </div>
       <div class="bio">
         <p>{{ this.mentorData.tag }}</p>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { StripeCheckout } from '@vue-stripe/vue-stripe';
+import { StripeCheckout } from "@vue-stripe/vue-stripe";
 export default {
   components: {
     StripeCheckout,
@@ -44,9 +44,11 @@ export default {
       tag: String,
     },
   },
-   data () {
-    this.publishableKey = "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL";
-    return {      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
+  data() {
+    this.publishableKey =
+      "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL";
+    return {
+      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
       loading: false,
       lineItems: [
         {
@@ -54,20 +56,20 @@ export default {
           quantity: 1,
         },
       ],
-      successURL: 'https://www.google.com', //Needs to land on success page
-      cancelURL: 'https://www.yahoo.com',   //Needs to land back on mentor full with a message that states payment cancelled.. or something.. idk
+      successURL: "https://www.google.com", //Needs to land on success page
+      cancelURL: "https://www.yahoo.com", //Needs to land back on mentor full with a message that states payment cancelled.. or something.. idk
     };
   },
   methods: {
     emitReturnToMainPage() {
-      this.$emit("return-to-MainPage-please")
+      this.$emit("return-to-MainPage-please");
     },
     submit() {
       // redirects to STRIPE checkout
       console.log("BUTTON PUSHED");
       this.$refs.checkoutRef.redirectToCheckout();
     },
-  }
+  },
 };
 </script>
 
@@ -81,7 +83,7 @@ export default {
 }
 
 .mentor-card {
-  border: 1px solid black
+  border: 1px solid black;
 }
 
 .mentor-photo {

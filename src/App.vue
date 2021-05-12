@@ -2,15 +2,14 @@
   <div id="app">
     <Navbar />
     <div class="main">
-      <div v-if="mainPageClicked"><MainPage /></div>
-      <div v-else><Splash @toggle-to-MainPage-please="toggleToMainPage" /></div>
+      <router-link to="/"> </router-link>
+      <router-link to="/mainpage"></router-link>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
-import Splash from "./components/Splash.vue";
-import MainPage from "./components/MainPage.vue";
 import Navbar from "./components/Navbar.vue";
 
 import Vue from "vue";
@@ -28,20 +27,17 @@ Vue.use(IconsPlugin);
 export default {
   name: "App",
   components: {
-    Splash,
-    MainPage,
+    // Splash,
     Navbar,
+    // MainPage,
   },
-  data: function () {
+  data: function() {
     return {
-      mainPageClicked: false,
+      //for github
+      // mainPageClicked: false,
     };
   },
-  methods: {
-    toggleToMainPage() {
-      this.mainPageClicked = true;
-    },
-  },
+  methods: {},
 };
 </script>
 
