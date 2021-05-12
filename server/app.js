@@ -52,7 +52,7 @@ app.use(express.static(path.resolve(__dirname, "..", "dist")));
 //   });
 // });
 
-app.get("/mentors", async (req, res) => {
+app.get("/api/mentors", async (req, res) => {
   const allMentors = await db("mentors").select();
   for (let mentor of allMentors) {
     mentor.skillset = (

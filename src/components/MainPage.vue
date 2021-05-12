@@ -17,6 +17,7 @@
 <script>
 import Mentor from "./Mentor.vue";
 import MentorFull from "./MentorFull.vue";
+import axios from "axios";
 
 export default {
   name: "MainPage",
@@ -49,6 +50,10 @@ export default {
         },
       ],
     };
+  },
+  created: async function() {
+    const {data: fetchedMentors } = await axios.get("https://mentorme-staging.herokuapp.com/mentors");
+    console.log(fetchedMentors);
   },
   methods: {
         toggleToMentorFull(name) {
