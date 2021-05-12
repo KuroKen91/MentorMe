@@ -53,7 +53,7 @@ export default {
       priceKey: "",
       lineItems: [
         {
-          price: "price_1Ipr2QJE2aA1nBuaYDN4WXlT", // The id of item
+          price: this.$store.state.selectedMentor.priceID, // HOW DO WE BRING OVER THE MENTOR PRICE ID 
           quantity: 1,
         },
       ],

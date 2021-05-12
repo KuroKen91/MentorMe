@@ -7,6 +7,7 @@ module.exports = [
     tag: "Bill Gates is a technologist, business leader, and philanthropist.",
     bio:
       "Who Is Bill Gates? Entrepreneur and businessman Bill Gates and his business partner Paul Allen founded and built the world's largest software business, Microsoft, through technological innovation, keen business strategy and aggressive business tactics.",
+    priceID: "price_1Iq7rJJE2aA1nBuawOdP7ViY" 
   },
   {
     id: "f7d22866-7d75-43ba-a5ff-05fdb2a293e1",
@@ -17,6 +18,7 @@ module.exports = [
       "Elon Musk is the charismatic founder and CEO of electric car maker Tesla as well as SpaceX and the Boring Company.",
     bio:
       "In his early career, he wrote Assemby for Rocket Science Games, he was in charge of making drivers for joysticks and mouses. Later he did all the code for Zip2, for backend he used C.",
+    priceID: "price_1Iq7sBJE2aA1nBuaHmrSZPqb"
   },
   {
     id: "2744f17d-49cd-4c26-ac8c-bedf0ab7c9d2",
@@ -25,5 +27,6 @@ module.exports = [
     tag: "They don't think it be like it is, but it do.",
     bio:
       "Once saved kittens from a burning kitten orphanage after working 4 weeks straight without sleep at a local soup kitchen.",
+    priceID: "price_1Iq7siJE2aA1nBuatgvVyGEl",
   },
 ];
