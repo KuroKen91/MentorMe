@@ -14,7 +14,6 @@ export const store = new Vuex.Store({
       state.selectedMentor = mentor;
     },
     setMentors(state, mentors) {
-      console.log("IM SETTING MENTORS", mentors);
       state.mentors = mentors;
     },
   },

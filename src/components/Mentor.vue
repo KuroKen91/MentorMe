@@ -9,13 +9,14 @@
       style="max-width: 15rem"
       class="mb-2"
     >
-      <div>
-        <div class="skillset">
+      <div class="skillset">
         <SkillsetIcon
           v-for="skill of mentorData.skillset"
           v-bind:key="skill"
           v-bind:skill="skill"
         />
+      </div>
+      <div>
         <b-card-text>
           {{ this.mentorData.tag }}
         </b-card-text>

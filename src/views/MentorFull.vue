@@ -37,16 +37,22 @@ export default {
     StripeCheckout,
   },
   name: "MentorFull",
-
-  computed: {
-    mentor() {
-      return this.$store.state.selectedMentor;
-    },
+  created: function() {
+    const selectedMentorIsSet = Object.prototype.hasOwnProperty.call(
+      this.$store.state.selectedMentor,
+      "id"
+    );
+    if (selectedMentorIsSet) {
+      this.mentor = this.$store.state.selectedMentor;
+    } else {
+      this.$router.push("/mainpage");
+    }
   },
 
   data() {
     return {
       //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
+      mentor: {},
       publishableKey:
         "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
       loading: false,
@@ -65,7 +71,6 @@ export default {
   methods: {
     submit() {
       // redirects to STRIPE checkout
-      console.log("BUTTON PUSHED");
       this.$refs.checkoutRef.redirectToCheckout();
     },
   },
