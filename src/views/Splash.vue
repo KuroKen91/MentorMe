@@ -8,7 +8,7 @@
         <router-link to="/mainpage">
           <button :href="href">Click Me!</button>
         </router-link>
-        <router-view />
+        <!-- <router-view /> -->
       </div>
       <div class="empty-div"></div>
     </div>
@@ -19,11 +19,7 @@
 export default {
   name: "Splash",
 
-  methods: {
-    emitTogglePage() {
-      this.$emit("toggle-to-MainPage-please");
-    },
-  },
+  methods: {},
 };
 </script>
 
