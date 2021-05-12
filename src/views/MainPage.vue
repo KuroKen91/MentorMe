@@ -31,7 +31,7 @@ export default {
 
 <style>
 .main-page {
-  background-color: #b4d455;
+  background-color: blue;
   height: 100vh;
   width: 100vw;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="success">
-    <h1>Thanks for shopping...</h1>
+    <h1>Success! Please check for a confirmation email. Feel free to click <router-link to="/mainpage">here</router-link> to see other mentors!</h1>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 
 <style>
 .success {
-  background-color: #b4d455;
+  background-color: red;
   height: 100vh;
   width: 100vw;
 }

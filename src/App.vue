@@ -2,11 +2,13 @@
   <div id="app">
     <Navbar />
     <div class="main">
-      <router-link to="/"> </router-link>
+      
+      <!-- <router-link to="/"> </router-link>
       <router-link to="/mainpage"></router-link>
       <router-link to="/mentorfull"></router-link>
-      <router-link to="/success"></router-link>
+      <router-link to="/success"></router-link> -->
       <router-view />
+      <router-link to="/success"><button>Pete's Button</button></router-link>
     </div>
   </div>
 </template>
