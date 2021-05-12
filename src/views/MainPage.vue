@@ -1,57 +1,30 @@
 <template>
   <div class="main-page">
-    <div class="all-mentors" v-if="isAllMentors">
-      <div class="mentor" v-for="item in this.mentors" :key="item.name">
-        <Mentor :mentorData="item" @mentor-full-please="toggleToMentorFull" />
+    <div class="all-mentors">
+      <div class="mentor" v-for="item in mentors" :key="item.name">
+        <Mentor :mentorData="item" />
       </div>
-    </div>
-
-    <div v-else>
-      <MentorFull
-        :mentorData="currentMentor"
-        @return-to-MainPage-please="toggleToMainPage"
-      />
     </div>
   </div>
 </template>
 
 <script>
 import Mentor from "../components/Mentor.vue";
-import MentorFull from "./MentorFull.vue";
 import axios from "axios";
 
 export default {
   name: "MainPage",
   components: {
     Mentor,
-    MentorFull,
   },
-  data: function() {
-    return {
-      isAllMentors: true,
-      currentMentor: {},
-      mentors: [],
-    };
+  computed: {
+    mentors() {
+      return this.$store.state.mentors;
+    },
   },
   created: async function() {
-    const { data: fetchedMentors } = await axios.get(
-      "https://mentorme-staging.herokuapp.com/api/mentors"
-    );
-    this.mentors = fetchedMentors;
-  },
-  methods: {
-    toggleToMentorFull(name) {
-      this.isAllMentors = false;
-      for (let mentor of this.mentors) {
-        if (mentor.name === name) {
-          this.currentMentor = mentor;
-        }
-      }
-    },
-    toggleToMainPage() {
-      this.isAllMentors = true;
-      this.currentMentor = {};
-    },
+    const { data: fetchedMentors } = await axios.get("/api/mentors");
+    this.$store.commit("setMentors", fetchedMentors);
   },
 };
 </script>

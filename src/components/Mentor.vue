@@ -9,19 +9,22 @@
       style="max-width: 15rem"
       class="mb-2"
     >
-      <div class="skillset">
+      <div>
+        <div class="skillset">
         <SkillsetIcon
           v-for="skill of mentorData.skillset"
           v-bind:key="skill"
           v-bind:skill="skill"
         />
+        <b-card-text>
+          {{ this.mentorData.tag }}
+        </b-card-text>
+        <router-link to="/mentorfull">
+          <b-button variant="primary" @click="setSelectedMentor"
+            >See More</b-button
+          >
+        </router-link>
       </div>
-      <b-card-text>
-        {{ this.mentorData.tag }}
-      </b-card-text>
-      <b-button href="#" variant="primary" @click="sendMentorEmit"
-        >See More</b-button
-      >
     </b-card>
   </div>
 </template>
@@ -43,12 +46,11 @@ export default {
     },
   },
   methods: {
-    sendMentorEmit() {
-      this.$emit("mentor-full-please", this.mentorData.name);
+    setSelectedMentor() {
+      this.$store.commit("setSelectedMentor", this.mentorData);
     },
   },
 };
-//this is for pushing
 </script>
 
 <style scoped>
