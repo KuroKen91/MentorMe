@@ -50,7 +50,6 @@ export default {
 }
 
 .empty-div {
-  /* border: 1px solid red; */
   flex: 1;
 }
 </style>
