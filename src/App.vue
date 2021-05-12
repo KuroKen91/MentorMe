@@ -33,6 +33,7 @@ export default {
   },
   data: function() {
     return {
+      //for github
       // mainPageClicked: false,
     };
   },
