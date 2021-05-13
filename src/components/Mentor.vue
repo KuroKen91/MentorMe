@@ -62,7 +62,7 @@ export default {
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   -webkit-transition: -webkit-transform 0.3s ease;
   -moz-transition: -moz-transform 0.3s ease;
   transition: transform 0.3s ease;
