@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { auth, provider } from "./firebase";
-import { CURRENT_URL } from "./Constants";
 
 Vue.use(Vuex);
 
