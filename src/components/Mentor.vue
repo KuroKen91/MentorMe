@@ -23,7 +23,7 @@
       </div>
 
       <router-link to="/mentorfull">
-        <b-button variant="dark" @click="setSelectedMentor">See More</b-button>
+        <b-button id="mentor-card-btn" variant="dark" @click="setSelectedMentor">See More</b-button>
       </router-link>
     </b-card>
   </div>
@@ -59,13 +59,23 @@ export default {
 .card {
   height: 28rem;
   position: relative;
+  transition: all 0.5s ease;
 }
 
-button {
+.card:hover {
+  transform: scale(1.02);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  opacity: 0.9;
+}
+
+#mentor-card-btn {
   position: absolute;
   top: 90%;
   left: 50%;
   transform: translate(-50%, -1%);
+  
 }
 
 .card-img-top {
@@ -76,5 +86,15 @@ button {
 .skillset {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 450px) {
+  .mb-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 }
 </style>

@@ -12,7 +12,7 @@
             Ask questions. Be curious. Grow your confidence.
           </p>
           <router-link to="/mentors">
-            <button id="see-mentors" class="btn btn-light">
+            <button id="mentor-btn" class="btn-light">
               Our Mentors
             </button>
           </router-link>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .splash {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
     url("https://picsum.photos/id/5/1920/1080");
@@ -54,7 +54,24 @@ p {
   margin: 2px;
 }
 
-#see-mentors {
+button {
   margin-top: 1rem;
+  align-self: center;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  border-radius: 2px;
 }
+
+button:hover, button:focus, button:active{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 </style>
