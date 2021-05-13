@@ -4,7 +4,6 @@ import Mentors from "../views/Mentors";
 import Splash from "../views/Splash";
 import MentorFull from "../views/MentorFull";
 import Success from "../views/Success";
-import Login from "../components/Login";
 
 Vue.use(VueRouter);
 
@@ -13,11 +12,6 @@ const routes = [
     path: "/mentors",
     name: "Mentors",
     component: Mentors,
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: Login,
   },
   {
     path: "/",
