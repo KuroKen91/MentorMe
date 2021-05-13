@@ -12,7 +12,13 @@
         <h2>{{ mentor.name }}</h2>
         <h5>Timezone: {{ mentor.timezone }}</h5>
       </div>
-      <div></div>
+      <div class="skills">
+        <SkillsetIcon
+          v-for="skill in mentor.skillset"
+          v-bind:key="skill"
+          v-bind:skill="skill"
+        />
+      </div>
       <div class="bio">
         <p>{{ mentor.bio }}</p>
       </div>
@@ -32,13 +38,16 @@
 
 <script>
 import { StripeCheckout } from "@vue-stripe/vue-stripe";
+import SkillsetIcon from "../components/SkillsetIcon";
 
 export default {
   components: {
     StripeCheckout,
+    SkillsetIcon,
   },
   name: "MentorFull",
   created: function() {
+    console.log(this.$store.state.selectedMentor);
     const selectedMentorIsSet = Object.prototype.hasOwnProperty.call(
       this.$store.state.selectedMentor,
       "id"
@@ -46,7 +55,7 @@ export default {
     if (selectedMentorIsSet) {
       this.mentor = this.$store.state.selectedMentor;
     } else {
-      this.$router.push("/mainpage");
+      this.$router.push("/mentors");
     }
   },
 
