@@ -37,7 +37,6 @@ export default {
 
 span {
     margin: 0 .5vw;
-    color: rgba(255, 255, 255, 0.7)
 }
 
 .links {
@@ -45,10 +44,10 @@ span {
 }
 
 a:link, a:visited {
-    color: white;
+    color: rgba(255, 255, 255, 0.7)
 }
 
 a:hover, a:active {
-  color: lightgray;
+  color: darkgrey;
 }
 </style>
