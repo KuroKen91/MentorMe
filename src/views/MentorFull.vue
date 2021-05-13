@@ -12,11 +12,17 @@
         <h2>{{ mentor.name }}</h2>
         <h5>Timezone: {{ mentor.timezone }}</h5>
       </div>
-      <div></div>
+      <div class="skills">
+        <SkillsetIcon
+          v-for="skill in mentor.skillset"
+          v-bind:key="skill"
+          v-bind:skill="skill"
+        />
+      </div>
       <div class="bio">
         <p>{{ mentor.bio }}</p>
       </div>
-      <button class="btn btn-light" @click="submit">Book Me!</button>
+      <button class="btn-light" @click="submit">Book Me!</button>
       <StripeCheckout
         ref="checkoutRef"
         mode="payment"
@@ -32,13 +38,16 @@
 
 <script>
 import { StripeCheckout } from "@vue-stripe/vue-stripe";
+import SkillsetIcon from "../components/SkillsetIcon";
 
 export default {
   components: {
     StripeCheckout,
+    SkillsetIcon,
   },
   name: "MentorFull",
   created: function() {
+    console.log(this.$store.state.selectedMentor);
     const selectedMentorIsSet = Object.prototype.hasOwnProperty.call(
       this.$store.state.selectedMentor,
       "id"
@@ -46,7 +55,7 @@ export default {
     if (selectedMentorIsSet) {
       this.mentor = this.$store.state.selectedMentor;
     } else {
-      this.$router.push("/mainpage");
+      this.$router.push("/mentors");
     }
   },
 
@@ -105,6 +114,20 @@ export default {
 button {
   margin-top: 1rem;
   align-self: center;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+button:hover, button:focus, button:active{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 @media only screen and (max-width: 450px) {
@@ -123,8 +146,8 @@ button {
       position: relative;
       right: 45px;
       font-weight: bold;
-      /* height: auto; */
-      /* font-size: 5vw; */
+      height: auto; 
+      font-size: 5vw;
       width: 175%;
     }
 }
