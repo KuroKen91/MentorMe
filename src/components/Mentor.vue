@@ -23,7 +23,7 @@
       </div>
 
       <router-link to="/mentorfull">
-        <b-button variant="dark" @click="setSelectedMentor">See More</b-button>
+        <b-button id="mentor-card-btn" variant="dark" @click="setSelectedMentor">See More</b-button>
       </router-link>
     </b-card>
   </div>
@@ -61,11 +61,20 @@ export default {
   position: relative;
 }
 
-button {
+.card:hover {
+  transform: scale(1.05);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  opacity: 0.9;
+}
+
+#mentor-card-btn {
   position: absolute;
   top: 90%;
   left: 50%;
   transform: translate(-50%, -1%);
+  
 }
 
 .card-img-top {
