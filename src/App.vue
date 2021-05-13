@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <Navbar />
+    <div class="navbar">
+      <Navbar />
+    </div>
     <div class="main">
-      <div v-if="mainPageClicked"><MainPage /></div>
-      <div v-else><Splash @toggle-to-MainPage-please="toggleToMainPage" /></div>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
-import Splash from "./components/Splash.vue";
-import MainPage from "./components/MainPage.vue";
-import Navbar from "./components/Navbar.vue";
-
 import Vue from "vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
@@ -24,39 +21,30 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
+import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "App",
   components: {
-    Splash,
-    MainPage,
     Navbar,
-  },
-  data: function () {
-    return {
-      mainPageClicked: false,
-    };
-  },
-  methods: {
-    toggleToMainPage() {
-      this.mainPageClicked = true;
-    },
   },
 };
 </script>
 
 <style>
+.navbar {
+  padding: 0px;
+}
+
 .main {
   position: absolute;
   top: 0;
   height: 100%;
 }
 
-.nav {
-  width: 100;
-}
-
 #app {
+  display: flex;
+  justify-content: flex-end;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
