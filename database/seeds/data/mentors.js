@@ -19,7 +19,7 @@ module.exports = [
     tag:
       "Elon Musk is the charismatic founder and CEO of electric car maker Tesla as well as SpaceX.",
     bio:
-      "In his early career, he wrote Assemby for Rocket Science Games, he was in charge of making drivers for joysticks and mouses. Later he did all the code for Zip2, for backend he used C.",
+      "In his early career, he wrote Assembly for Rocket Science Games, he was in charge of making drivers for joysticks and mouses. Later he did all the code for Zip2, for backend he used C.",
     priceID: "price_1Iq7sBJE2aA1nBuaHmrSZPqb"
   },
   {

@@ -2,7 +2,7 @@
   <div class="header-wrapper">
     <div class="navbar" v-if="loggedInState !== true">
       <div class="main-nav-container">
-        <img src="../assets/MentorMe.png" id="logo" />
+        <img src="../assets/MentorMe.png" id="logo" alt="mentor-me-logo" />
         <div class="navbar">
           <b-navbar toggleable="sm" type="dark">
             <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
@@ -33,14 +33,13 @@
     </div>
     <div v-else>
       <div class="main-nav-container">
-        <img src="../assets/MentorMe.png" id="logo" />
+        <img src="../assets/MentorMe.png" id="logo" alt="mentor-me-logo" />
         <div class="navbar">
           <b-navbar toggleable="sm" type="dark">
             <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
             <b-collapse id="nav-text-collapse" is-nav>
               <b-navbar-nav>
                 <!-- <div class="welcome-user">
-              <b-avatar :src="`${user.avatar_url}`"></b-avatar>
               <b-nav-text id="welcome-dude">
                 Welcome {{ user.username }}
               </b-nav-text>
@@ -52,9 +51,12 @@
                   <b-nav-text id="all-mentors-link">Register</b-nav-text>
                 </router-link>
                 <router-link to="/mentors">
-                  <b-nav-text id="all-mentors-link" @click="loginUser"
-                    >Login</b-nav-text
-                  >
+                  <b-nav-text id="all-mentors-link" @click="loginUser">
+                    <img :src="`${user.avatar_url}`" id="user-avatar" />
+                    <span id="username-text">
+                      {{ user.username }}
+                    </span>
+                  </b-nav-text>
                 </router-link>
               </b-navbar-nav>
             </b-collapse>
@@ -89,9 +91,14 @@ export default {
 
 <style>
 #logo {
-  height: 170px;
-  width: 310px;
+  height: 150px;
+  width: 290px;
   cursor: pointer;
+}
+
+#user-avatar {
+  border-radius: 50%;
+  height: 50px;
 }
 
 .main-nav-container {
@@ -111,10 +118,16 @@ nav {
   margin-bottom: 50px;
 }
 
+#username-text {
+  color: ghostwhite;
+  font-size: 0.8rem;
+}
+
 .navbar-nav {
   justify-content: space-around;
+  align-items: center;
   background-color: none;
-  width: 40vw;
+  width: 50vw;
   margin-top: -50px;
 }
 

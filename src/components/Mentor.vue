@@ -59,10 +59,11 @@ export default {
 .card {
   height: 28rem;
   position: relative;
+  transition: all 0.5s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   -webkit-transition: -webkit-transform 0.3s ease;
   -moz-transition: -moz-transform 0.3s ease;
   transition: transform 0.3s ease;
