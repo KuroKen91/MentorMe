@@ -50,7 +50,7 @@
                 <router-link to="/register">
                   <b-nav-text id="all-mentors-link">Register</b-nav-text>
                 </router-link>
-                <router-link to="user.html_url">
+                <router-link to="/mentors">
                   <b-nav-text id="all-mentors-link" @click="loginUser">
                     <img :src="`${user.avatar_url}`" id="user-avatar" />
                     <span id="username-text">
