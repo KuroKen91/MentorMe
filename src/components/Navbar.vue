@@ -8,12 +8,6 @@
             <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
             <b-collapse id="nav-text-collapse" is-nav>
               <b-navbar-nav>
-                <!-- <div class="welcome-user">
-              <b-avatar :src="`${user.avatar_url}`"></b-avatar>
-              <b-nav-text id="welcome-dude">
-                Welcome {{ user.username }}
-              </b-nav-text>
-            </div> -->
                 <router-link to="/mentors">
                   <b-nav-text id="all-mentors-link">All Mentors</b-nav-text>
                 </router-link>
@@ -39,11 +33,6 @@
             <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
             <b-collapse id="nav-text-collapse" is-nav>
               <b-navbar-nav>
-                <!-- <div class="welcome-user">
-              <b-nav-text id="welcome-dude">
-                Welcome {{ user.username }}
-              </b-nav-text>
-            </div> -->
                 <router-link to="/mentors">
                   <b-nav-text id="all-mentors-link">All Mentors</b-nav-text>
                 </router-link>
@@ -51,11 +40,9 @@
                   <b-nav-text id="all-mentors-link">Register</b-nav-text>
                 </router-link>
                 <router-link to="/mentors">
-                  <b-nav-text id="all-mentors-link" @click="loginUser">
+                  <b-nav-text id="all-mentors-link">
                     <img :src="`${user.avatar_url}`" id="user-avatar" />
-                    <span id="username-text">
-                      {{ user.username }}
-                    </span>
+                    <span id="username-text"> @{{ user.username }} </span>
                   </b-nav-text>
                 </router-link>
               </b-navbar-nav>
