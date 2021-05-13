@@ -2,7 +2,7 @@
   <div class="header-wrapper">
     <div class="navbar" v-if="loggedInState !== true">
       <div class="main-nav-container">
-        <img src="../assets/MentorMe.png" id="logo" />
+        <img src="../assets/MentorMe.png" id="logo" alt="mentor-me-logo" />
         <div class="navbar">
           <b-navbar toggleable="sm" type="dark">
             <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
@@ -33,7 +33,7 @@
     </div>
     <div v-else>
       <div class="main-nav-container">
-        <img src="../assets/MentorMe.png" id="logo" />
+        <img src="../assets/MentorMe.png" id="logo" alt="mentor-me-logo" />
         <div class="navbar">
           <b-navbar toggleable="sm" type="dark">
             <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
