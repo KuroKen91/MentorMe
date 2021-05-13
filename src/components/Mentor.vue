@@ -85,4 +85,14 @@ button {
   display: flex;
   justify-content: center;
 }
+
+@media only screen and (max-width: 450px) {
+  .mb-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+}
 </style>

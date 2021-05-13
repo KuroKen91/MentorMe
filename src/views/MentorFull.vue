@@ -22,7 +22,7 @@
       <div class="bio">
         <p>{{ mentor.bio }}</p>
       </div>
-      <button class="btn btn-light" @click="submit">Book Me!</button>
+      <button class="btn-light" @click="submit">Book Me!</button>
       <StripeCheckout
         ref="checkoutRef"
         mode="payment"
@@ -61,20 +61,19 @@ export default {
 
   data() {
     return {
-      //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
       mentor: {},
       publishableKey:
         "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
       loading: false,
       lineItems: [
         {
-          price: this.$store.state.selectedMentor.priceID, // HOW DO WE BRING OVER THE MENTOR PRICE ID
+          price: this.$store.state.selectedMentor.priceID, 
           quantity: 1,
         },
       ],
       // Change back when pushing
-      successURL: "https://mentorme-staging.herokuapp.com/success", //Needs to land on success page
-      cancelURL: "https://mentorme-staging.herokuapp.com/", //Needs to land back on mentor full with a message that states payment cancelled.. or something.. idk
+      successURL: "https://mentorme-staging.herokuapp.com/success", 
+      cancelURL: "https://mentorme-staging.herokuapp.com/",
     };
   },
   methods: {
@@ -115,5 +114,41 @@ export default {
 button {
   margin-top: 1rem;
   align-self: center;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+button:hover, button:focus, button:active{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 450px) {
+    .mentor-full{
+      display: flex;
+      position: relative;
+      flex-direction: column;
+    }
+    .mentor-photo {
+      position: relative;
+      left: 5px;
+      margin-bottom: 25px;
+    }
+    .bio {
+      flex-direction: column;
+      position: relative;
+      right: 45px;
+      font-weight: bold;
+      height: auto; 
+      font-size: 5vw;
+      width: 175%;
+    }
 }
 </style>
