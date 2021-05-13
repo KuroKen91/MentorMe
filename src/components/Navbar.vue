@@ -12,7 +12,9 @@
               <b-nav-text id="all-mentors-link">Register</b-nav-text>
             </router-link>
             <router-link to="/login">
-              <b-nav-text id="all-mentors-link">Login</b-nav-text>
+              <b-nav-text id="all-mentors-link" @click="loginUser"
+                >Login</b-nav-text
+              >
             </router-link>
           </b-navbar-nav>
         </b-collapse>
@@ -24,6 +26,11 @@
 <script>
 export default {
   name: "Navbar",
+  methods: {
+    loginUser() {
+      this.$store.dispatch("loginUser");
+    },
+  },
 };
 </script>
 
