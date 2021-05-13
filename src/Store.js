@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { auth, provider } from "./firebase";
+import { CURRENT_URL } from "./Constants";
 
 Vue.use(Vuex);
 
@@ -31,8 +32,9 @@ export const store = new Vuex.Store({
       state.user.avatar_url = payload.avatar_url;
       state.isLoggedIn = true;
     },
-    loginUserFail(state) {
+    loginUserFail(state, err) {
       state.isLoggedIn = false;
+      console.error(err);
       alert("something went wrong trying to log in");
     },
   },
@@ -47,9 +49,10 @@ export const store = new Vuex.Store({
             email: result.user.email,
             html_url: result.additionalUserInfo.profile.html_url,
           });
-          window.location = "/mentors";
+          //Change URL in constants to our production/staging URL
+          // window.location = `${CURRENT_URL}mentors`;
         })
-        .catch((err) => context.commit("loginUserFail"));
+        .catch((err) => context.commit("loginUserFail", err));
     },
   },
 });
