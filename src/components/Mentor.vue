@@ -61,6 +61,14 @@ export default {
   position: relative;
 }
 
+.card:hover {
+  transform: scale(1.05);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  opacity: 0.9;
+}
+
 button {
   position: absolute;
   top: 90%;
