@@ -6,6 +6,9 @@
     <div class="main">
       <router-view />
     </div>
+    <div class="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -22,11 +25,13 @@ Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     Navbar,
+    Footer,
   },
 };
 </script>
@@ -42,8 +47,15 @@ export default {
   height: 100%;
 }
 
+.footer {
+  margin-top: auto;
+  bottom: 0;
+  position: absolute;
+}
+
 #app {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,4 +64,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+/* @media only screen and (max-width: 600px) {
+
+} */
 </style>
