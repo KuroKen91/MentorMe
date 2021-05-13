@@ -1,16 +1,23 @@
 <template>
   <div>
     <div class="splash">
-      <div class="welcome-message-container">
-        <p class="welcome-message-text">
-          Buy me right now. I'm cheap. Don't miss out!
-        </p>
-        <router-link to="/mainpage">
-          <button :href="href">Click Me!</button>
-        </router-link>
-        <!-- <router-view /> -->
+      <div class="main-wrapper">
+        <div class="welcome-message-container">
+          <h1>MentorMe</h1>
+          <p class="welcome-message-text">
+            One on one, online mentoring from industry professionals with skills
+            YOU need to learn.
+          </p>
+          <p>
+            Ask questions. Be curious. Grow your confidence.
+          </p>
+          <router-link to="/mentors">
+            <button id="see-mentors" class="btn btn-light">
+              Our Mentors
+            </button>
+          </router-link>
+        </div>
       </div>
-      <div class="empty-div"></div>
     </div>
   </div>
 </template>
@@ -18,15 +25,19 @@
 <script>
 export default {
   name: "Splash",
-
-  methods: {},
+  computed: {
+    name() {
+      return this.$store.state.king;
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .splash {
-  background-image: url("https://picsum.photos/1920/1080");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url("https://picsum.photos/id/5/1920/1080");
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -35,12 +46,15 @@ export default {
 }
 
 .welcome-message-container {
-  /* border: 3px solid hotpink; */
-  flex: 2;
+  color: white;
+  padding: 12px;
 }
 
-.empty-div {
-  /* border: 1px solid red; */
-  flex: 1;
+p {
+  margin: 2px;
+}
+
+#see-mentors {
+  margin-top: 1rem;
 }
 </style>
