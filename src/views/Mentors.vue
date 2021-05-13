@@ -17,7 +17,7 @@ import Mentor from "../components/Mentor.vue";
 import axios from "axios";
 
 export default {
-  name: "MainPage",
+  name: "Mentors",
   components: {
     Mentor,
   },
@@ -35,7 +35,8 @@ export default {
 
 <style>
 .main-page {
-  background-color: blue;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url("https://img.pngio.com/dark-grey-background-high-resolution-photo-isk6e-free-dragonfly-dark-grey-png-1920_1200.png");
   height: 100vh;
   width: 100vw;
 }

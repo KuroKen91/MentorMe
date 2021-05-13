@@ -1,19 +1,19 @@
 <template>
   <div class="header-wrapper">
-    <div class="logo">
-      <h1>:thinking:</h1>
-    </div>
-    <div class="empty-div"></div>
     <div class="navbar">
-      <b-navbar toggleable="sm" type="light" variant="light">
+      <b-navbar toggleable="sm" type="dark">
         <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav>
-            <router-link to="/mainpage">
-              <b-nav-text id="all-mentors-link">All mentors</b-nav-text>
+            <router-link to="/mentors">
+              <b-nav-text id="all-mentors-link">All Mentors</b-nav-text>
             </router-link>
-            <b-nav-text>Signup</b-nav-text>
-            <b-nav-text>Login</b-nav-text>
+            <router-link to="/register">
+              <b-nav-text id="all-mentors-link">Register</b-nav-text>
+            </router-link>
+            <router-link to="/login">
+              <b-nav-text id="all-mentors-link">Login</b-nav-text>
+            </router-link>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -29,30 +29,20 @@ export default {
 
 <style>
 .header-wrapper {
-  position: fixed;
   display: flex;
-  justify-content: space-between;
-  position: sticky;
-  z-index: 2;
-}
-
-.logo {
-  flex: 1;
-  border: 1px black solid;
+  justify-content: center;
+  z-index: 1;
 }
 
 .navbar-nav {
   justify-content: space-around;
-  border: 1px solid hotpink;
-  flex: 1;
-  width: 45vw;
+  background-color: none;
+  width: 25vw;
 }
 
 a {
   text-decoration: none;
-}
-
-.empty-div {
+  color: white;
 }
 
 #nav-text-collapse {
