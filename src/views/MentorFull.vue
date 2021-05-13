@@ -123,6 +123,7 @@ button {
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
   transition-property: transform;
+  border-radius: 2px;
 }
 
 button:hover, button:focus, button:active{
