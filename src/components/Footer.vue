@@ -22,7 +22,7 @@ export default {
 <style>
 .footer-container {
     height: 5vh;
-  background-color: rgba(0,0,0, 0.1);
+  /* background-color: rgba(0,0,0, 0.1); */
   min-width: 100vw;
   display: flex;
   justify-content: center;
