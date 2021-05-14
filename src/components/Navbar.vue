@@ -11,7 +11,7 @@
                 <router-link to="/mentors">
                   <b-nav-text id="all-mentors-link">All Mentors</b-nav-text>
                 </router-link>
-                <router-link to="/register">
+                <router-link to="/">
                   <b-nav-text id="all-mentors-link">Register</b-nav-text>
                 </router-link>
                 <router-link to="/mentors">
