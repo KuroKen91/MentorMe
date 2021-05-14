@@ -64,8 +64,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
-/* @media only screen and (max-width: 600px) {
-
-} */
+label {
+  color: white;
+}
 </style>
