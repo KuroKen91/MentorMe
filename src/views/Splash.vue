@@ -63,7 +63,7 @@ export default {
   width: 45%;
   margin-top: -15px;
   margin-bottom: 140px;
-  margin-right: 140px;
+  margin-right: 135px;
 }
 
 .welcome-message-text {
