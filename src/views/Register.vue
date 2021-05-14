@@ -134,7 +134,9 @@ export default {
       event.preventDefault();
       console.log(this.form.skillset);
       await axios.post("/mentors/new", this.form);
-      console.log("Request sent.");
+      console.log("before router push");
+      this.$router.push("/mentors");
+      console.log("after router push");
     },
     onReset(event) {
       event.preventDefault();
@@ -184,6 +186,10 @@ textarea {
     url("https://img.pngio.com/dark-grey-background-high-resolution-photo-isk6e-free-dragonfly-dark-grey-png-1920_1200.png");
   height: 100vh;
   width: 100vw;
+}
+
+#reg-form {
+  margin-top: 5rem;
 }
 
 .skills {
