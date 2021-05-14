@@ -37,12 +37,14 @@
                   <b-nav-text id="all-mentors-link">All Mentors</b-nav-text>
                 </router-link>
                 <router-link to="/register">
-                  <b-nav-text id="all-mentors-link">Register</b-nav-text>
+                  <b-nav-text id="all-mentors-link">Bookings</b-nav-text>
                 </router-link>
                 <router-link to="/mentors">
                   <b-nav-text id="all-mentors-link">
                     <img :src="`${user.avatar_url}`" id="user-avatar" />
-                    <span id="username-text"> @{{ user.username }} </span>
+                    <span id="username-text">
+                      {{ `&lt; ${user.username} />` }}
+                    </span>
                   </b-nav-text>
                 </router-link>
               </b-navbar-nav>
@@ -106,7 +108,7 @@ nav {
 }
 
 #username-text {
-  color: ghostwhite;
+  /* color: ghostwhite; */
   font-size: 0.8rem;
 }
 
