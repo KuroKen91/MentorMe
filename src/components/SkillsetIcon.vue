@@ -26,4 +26,8 @@ export default {
   font-size: 2rem;
   margin: 0.5rem;
 }
+
+.skill:hover {
+  cursor: pointer;
+}
 </style>
