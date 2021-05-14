@@ -40,5 +40,6 @@ export default {
 
 .skill:hover {
   cursor: pointer;
+  opacity: 0.9;
 }
 </style>
