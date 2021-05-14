@@ -64,16 +64,16 @@ export default {
     return {
       mentor: {},
       publishableKey:
-        "pk_test_51IpqCvBT4mSoUdNPjf9RrACj7VVHpPNlpiD71P8aSCFgSmuHvB1EESlpTL8arv2w2xwK4LvUMAFzAZrYkpPAakaK00OJvx7Azh",
+        "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
       loading: false,
       lineItems: [
         {
-          price: this.$store.state.selectedMentor.priceID, 
+          price: this.$store.state.selectedMentor.priceID,
           quantity: 1,
         },
       ],
       // Change back when pushing
-      successURL: "https://mentorme-staging.herokuapp.com/success", 
+      successURL: "https://mentorme-staging.herokuapp.com/success",
       cancelURL: "https://mentorme-staging.herokuapp.com/",
     };
   },
@@ -127,30 +127,32 @@ button {
   border-radius: 2px;
 }
 
-button:hover, button:focus, button:active{
+button:hover,
+button:focus,
+button:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
 @media only screen and (max-width: 450px) {
-    .mentor-full{
-      display: flex;
-      position: relative;
-      flex-direction: column;
-    }
-    .mentor-photo {
-      position: relative;
-      left: 5px;
-      margin-bottom: 25px;
-    }
-    .bio {
-      flex-direction: column;
-      position: relative;
-      right: 45px;
-      font-weight: bold;
-      height: auto; 
-      font-size: 5vw;
-      width: 175%;
-    }
+  .mentor-full {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+  }
+  .mentor-photo {
+    position: relative;
+    left: 5px;
+    margin-bottom: 25px;
+  }
+  .bio {
+    flex-direction: column;
+    position: relative;
+    right: 45px;
+    font-weight: bold;
+    height: auto;
+    font-size: 5vw;
+    width: 175%;
+  }
 }
 </style>

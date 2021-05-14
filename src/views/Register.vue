@@ -133,7 +133,7 @@ export default {
     async onSubmit(event) {
       event.preventDefault();
       console.log(this.form.skillset);
-      await axios.post("http://localhost:5000/mentors/new", this.form);
+      await axios.post("/mentors/new", this.form);
       console.log("Request sent.");
     },
     onReset(event) {
@@ -163,9 +163,7 @@ export default {
     SkillsetIcon,
   },
   async created() {
-    const { data: skills } = await axios.get(
-      "http://localhost:5000/api/skillset"
-    );
+    const { data: skills } = await axios.get("/api/skillset");
     this.fetchedSkillset = skills;
   },
 };
