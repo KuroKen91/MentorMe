@@ -17,6 +17,7 @@
           v-for="skill in mentor.skillset"
           v-bind:key="skill"
           v-bind:skill="skill"
+          v-bind:colored="true"
         />
       </div>
       <div class="bio">
@@ -64,7 +65,7 @@ export default {
       //holy crap this is dangerous, but.. yolo. (P.S.: Don't snitch to Daniel)
       mentor: {},
       publishableKey:
-        "pk_test_51IpoP5JE2aA1nBuaRklotsBycJQNFHDIR0x4Bl7yiegoKcck5v8gbqiFdbQBVFJtIHrMLfvyRlSy5Y8QfP36aREr00l1vEZETL",
+        "pk_test_51IpqCvBT4mSoUdNPjf9RrACj7VVHpPNlpiD71P8aSCFgSmuHvB1EESlpTL8arv2w2xwK4LvUMAFzAZrYkpPAakaK00OJvx7Azh",
       loading: false,
       lineItems: [
         {

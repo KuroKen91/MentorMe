@@ -4,6 +4,7 @@ import Mentors from "../views/Mentors";
 import Splash from "../views/Splash";
 import MentorFull from "../views/MentorFull";
 import Success from "../views/Success";
+import Register from "../views/Register";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/success",
     name: "Success",
     component: Success,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
   },
 ];
 
