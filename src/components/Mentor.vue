@@ -14,6 +14,7 @@
           v-for="skill of mentorData.skillset"
           v-bind:key="skill"
           v-bind:skill="skill"
+          v-bind:colored="true"
         />
       </div>
       <div>
