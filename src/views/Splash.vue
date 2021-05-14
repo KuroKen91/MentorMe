@@ -62,7 +62,8 @@ export default {
   padding: 12px;
   width: 45%;
   margin-top: -15px;
-  margin-bottom: 90px;
+  margin-bottom: 140px;
+  margin-right: 135px;
 }
 
 .welcome-message-text {
