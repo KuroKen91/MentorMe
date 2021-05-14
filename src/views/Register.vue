@@ -134,7 +134,7 @@ export default {
       event.preventDefault();
       console.log(this.form.skillset);
       await axios.post("/mentors/new", this.form);
-      console.log("Request sent.");
+      this.$router.push("/mentors");
     },
     onReset(event) {
       event.preventDefault();
