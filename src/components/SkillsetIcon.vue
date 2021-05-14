@@ -1,11 +1,14 @@
 <template>
-  <i :class="'skill colored ' + icons[skill]"></i>
+  <i
+    :class="'skill' + (colored ? ' colored ' : ' ') + icons[skill]"
+    @click="handleClick(skill)"
+  ></i>
 </template>
 
 <script>
 export default {
   name: "SkillsetIcon",
-  props: ["skill"],
+  props: ["skill", "colored", "clickable"],
   data: function() {
     return {
       icons: {
@@ -17,6 +20,14 @@ export default {
         postgresql: "devicon-postgresql-plain",
       },
     };
+  },
+  methods: {
+    handleClick: function(skill) {
+      if (this.clickable) {
+        this.colored = !this.colored;
+        this.$emit("toggleSkill", skill);
+      }
+    },
   },
 };
 </script>
