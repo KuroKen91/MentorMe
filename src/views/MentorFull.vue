@@ -73,8 +73,8 @@ export default {
         },
       ],
       // Change back when pushing
-      successURL: "/success",
-      cancelURL: "/",
+      successURL: "https://mentorme-prod.herokuapp.com/success",
+      cancelURL: "https://mentorme-prod.herokuapp.com/",
     };
   },
   methods: {

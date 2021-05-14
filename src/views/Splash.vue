@@ -62,7 +62,7 @@ export default {
   padding: 12px;
   width: 45%;
   margin-top: -15px;
-  margin-bottom: 160px;
+  margin-bottom: 150px;
   margin-right: 135px;
 }
 
