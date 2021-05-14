@@ -14,6 +14,7 @@
           v-for="skill of mentorData.skillset"
           v-bind:key="skill"
           v-bind:skill="skill"
+          v-bind:colored="true"
         />
       </div>
       <div>
@@ -23,7 +24,7 @@
       </div>
 
       <router-link to="/mentorfull">
-        <b-button variant="dark" @click="setSelectedMentor">See More</b-button>
+        <b-button id="mentor-card-btn" variant="dark" @click="setSelectedMentor">See More</b-button>
       </router-link>
     </b-card>
   </div>
@@ -59,6 +60,7 @@ export default {
 .card {
   height: 28rem;
   position: relative;
+  transition: all 0.5s ease;
 }
 
 .card:hover {
@@ -69,11 +71,12 @@ export default {
   opacity: 0.9;
 }
 
-button {
+#mentor-card-btn {
   position: absolute;
   top: 90%;
   left: 50%;
   transform: translate(-50%, -1%);
+  
 }
 
 .card-img-top {

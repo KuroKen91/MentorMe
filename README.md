@@ -1,5 +1,7 @@
 This app was created during our time as students at Code Chrysalis
 
+<img src="./src/assets/MentorMe.png">
+
 # MentorMe. - Connect driven students to industry professionals for one on one mentoring sessions
 
 MentorMe is a fullstack application which aims to create a platform for students to communicate with experts in the industry. 

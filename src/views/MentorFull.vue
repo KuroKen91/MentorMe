@@ -17,6 +17,7 @@
           v-for="skill in mentor.skillset"
           v-bind:key="skill"
           v-bind:skill="skill"
+          v-bind:colored="true"
         />
       </div>
       <div class="bio">
@@ -67,12 +68,12 @@ export default {
       loading: false,
       lineItems: [
         {
-          price: this.$store.state.selectedMentor.priceID, 
+          price: this.$store.state.selectedMentor.priceID,
           quantity: 1,
         },
       ],
       // Change back when pushing
-      successURL: "https://mentorme-staging.herokuapp.com/success", 
+      successURL: "https://mentorme-staging.herokuapp.com/success",
       cancelURL: "https://mentorme-staging.herokuapp.com/",
     };
   },
@@ -123,32 +124,35 @@ button {
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
   transition-property: transform;
+  border-radius: 2px;
 }
 
-button:hover, button:focus, button:active{
+button:hover,
+button:focus,
+button:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
 @media only screen and (max-width: 450px) {
-    .mentor-full{
-      display: flex;
-      position: relative;
-      flex-direction: column;
-    }
-    .mentor-photo {
-      position: relative;
-      left: 5px;
-      margin-bottom: 25px;
-    }
-    .bio {
-      flex-direction: column;
-      position: relative;
-      right: 45px;
-      font-weight: bold;
-      height: auto; 
-      font-size: 5vw;
-      width: 175%;
-    }
+  .mentor-full {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+  }
+  .mentor-photo {
+    position: relative;
+    left: 5px;
+    margin-bottom: 25px;
+  }
+  .bio {
+    flex-direction: column;
+    position: relative;
+    right: 45px;
+    font-weight: bold;
+    height: auto;
+    font-size: 5vw;
+    width: 175%;
+  }
 }
 </style>
