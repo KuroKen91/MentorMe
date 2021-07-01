@@ -4,8 +4,8 @@ This app was created during our time as students at Code Chrysalis
 
 # MentorMe. - Connect driven students to industry professionals for one on one mentoring sessions
 
-MentorMe is a fullstack application which aims to create a platform for students to communicate with experts in the industry. 
-This project was an oppurtunity for team members to put their skills to practice to develop a fullstack application in a limited amount of time while using the STRIP API. The STRIPE API used is the One Time Payment capability for the test checkout portion of MentorMe.
+MentorMe is a Full-Stack application which aims to create a platform for students to communicate with experts in the industry. 
+This project was an opportunity for team members to put their skills to practice developing a Full-Stack application in a limited amount of time while using the STRIPE API. The STRIPE API used is the One Time Payment capability for the test checkout portion of MentorMe.
 
 View on your desktop here: https://mentorme-prod.herokuapp.com/
 
@@ -25,14 +25,14 @@ View on your desktop here: https://mentorme-prod.herokuapp.com/
 
 ## Getting Started
 
-***Please note that you will not have access to the original products but you are free to test with your own using SRIPE dashboard***
+***Please note that you will not have access to the original products but you are free to test with your own using STRIPE dashboard***
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 See deployment for notes on how to deploy the project on a live system.
 
 ### Installing
 
-Everything you need is in the package.json, so just a basic install from your package manager of choice will suffice:
+Everything you need is in the package.json, so just a basic installation from your package manager of choice will suffice:
 
 ```
 npm install
@@ -60,7 +60,7 @@ DB_HOST=localhost
 Add all necessary STRIPE ENV
 ```
 
-Head over to your postgres terminal and create a local database with whatever name you entered for DB_NAME in your .env file, and then run
+Head over to your Postgres terminal and create a local database with the name you entered for DB_NAME in your .env file, and then run
 
 You can then start the two dev servers (in separate terminals):
 
@@ -69,13 +69,13 @@ npm run start
 npm run serve
 ```
 
-And then open your localhost8080 to see the site in action!
+And then open localhost8080 in your browser to see the site in action!
 
 Note: the servers will automatically run a migration and seed.
 
 ## Contributing
 
-Should you want to contribute:
+Should you wish to contribute:
 * please fork and clone the repo on your machine
 * Create an "issue" to describe what you want to work on
 * Submit a pull request.
